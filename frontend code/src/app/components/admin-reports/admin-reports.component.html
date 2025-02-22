@@ -1,0 +1,41 @@
+<div class="container discussion-board mt-4">
+    
+  
+        <!-- Success Message -->
+        <div *ngIf="successMessage" class="alert alert-success text-center">
+            <strong>{{ successMessage }}</strong>
+        </div>
+    
+    <!-- Search Bar -->
+    <div class="mb-3">
+      <div class="input-group">
+        <span class="input-group-text bg-primary text-white">
+          <i class="bi bi-search"></i> <!-- Bootstrap search icon -->
+        </span>
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery" 
+          class="form-control" 
+          placeholder="Search reports by description, location, abuse type, or abuser..."
+        />
+        <button *ngIf="searchQuery" class="btn btn-outline-secondary" (click)="clearSearch()">
+          <i class="bi bi-x-lg"></i> <!-- Bootstrap clear icon -->
+        </button>
+      </div>
+    </div>
+  
+    <!-- Displaying posts -->
+    <div class="mt-4">
+        <h3 class="text-center">Some Recent Reports</h3>
+        <div *ngFor="let post of filteredReports()" class="card my-3 p-3 shadow-sm">
+            <a class="nav-link" (click)="navigateToCommentsPage(post.id)">
+                <p><strong>Anonymous:</strong> {{ post.description }}</p>
+                <p><strong>Location:</strong> {{ post.location }}</p>
+                <p><strong>Abuse Type:</strong> {{ post.abuseType }}</p>
+                <p><strong>Who Abused:</strong> {{ post.whoAbused }}</p>
+                <p><strong>Evidence:</strong> {{ post.evidence }}</p>
+            </a>
+        </div>
+    </div>
+  </div>
+  

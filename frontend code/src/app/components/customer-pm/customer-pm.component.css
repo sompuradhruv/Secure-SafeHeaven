@@ -1,0 +1,14 @@
+.card {
+    border-radius: 10px;
+    background-color: #f8f9fa;
+  }
+  
+  h4 {
+    margin-bottom: 15px;
+  }
+  
+  .btn {
+    display: block;
+    width: fit-content;
+  }
+  

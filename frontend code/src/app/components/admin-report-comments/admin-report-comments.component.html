@@ -1,0 +1,48 @@
+<div class="container discussion-board mt-5">
+    <h2 class="text-center mb-4 fw-bold">📝 Report Conversation</h2>
+  
+    <!-- ✅ Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success text-center">
+      <strong>{{ successMessage }}</strong>
+    </div>
+  
+    <!-- 💬 Comment Input Section -->
+    <div class="card p-4 shadow-lg rounded-4">
+      <textarea
+        class="form-control mb-3 rounded-3"
+        [(ngModel)]="newPost"
+        placeholder="Write a comment..."
+        rows="3"
+      ></textarea>
+      <button class="btn btn-primary w-100 rounded-pill fw-semibold" (click)="addPost()">
+        Post Comment
+      </button>
+    </div>
+  
+    <!-- 📊 Charts Section -->
+    <div class="row mt-5 g-4">
+      <div class="col-md-6">
+        <div class="card shadow-lg p-3 rounded-4">
+          <h5 class="text-center fw-semibold">Incidents by City & Abuse Type</h5>
+          <canvas id="incidentBarChart" class="border rounded-3 p-2"></canvas>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="card shadow-lg p-3 rounded-4">
+          <h5 class="text-center fw-semibold">Domestic Violence Cases by City</h5>
+          <canvas id="domesticViolencePieChart" class="border rounded-3 p-2"></canvas>
+        </div>
+      </div>
+    </div>
+  
+    <!-- 💬 Comments Section -->
+    <div class="mt-5">
+      <h3 class="text-center fw-bold">🗨️ Comments</h3>
+      <div *ngFor="let post of posts" class="card my-3 p-3 shadow-sm rounded-4">
+        <strong class="text-primary">{{ post.user.name }}</strong>
+        <p class="mt-2">{{ post.text }}</p>
+      </div>
+    </div>
+  </div>
+  

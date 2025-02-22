@@ -1,0 +1,66 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow-lg border-0">
+          <div class="card-header bg-primary text-white text-center py-3">
+            <h5 class="mb-0">Sign Up</h5><br>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-outline-light me-2" (click)="setUserType('CUSTOMER')">
+                User Sign Up
+              </button>
+              <button class="btn btn-outline-light" (click)="setUserType('ADMIN')">
+                NGO Service Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-4">
+            <h3 class="text-center mb-4">
+              {{ userType === 'CUSTOMER' ? 'User Sign Up' : 'NGO Service Sign Up' }}
+            </h3>
+            <div class="alert alert-primary mb-4" *ngIf="successMsg">
+              {{ successMsg }}
+            </div>
+            <div class="alert alert-danger mb-4" *ngIf="errorMsg">
+              {{ errorMsg }}
+            </div>
+
+                                  <!-- Security Message -->
+          <div class="alert alert-info d-flex align-items-center">
+            <i class="bi bi-shield-lock-fill me-2"></i>
+            <strong>Your Sign Up credentials are end-to-end encrypted and secured using OAuth & JWT. 
+              Do not worry about your identity being exposed!</strong>
+          </div>
+
+            <!-- Form -->
+            <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+              <div class="mb-3">
+                <label class="form-label">Enter Name:</label>
+                <input type="text" class="form-control" formControlName="name" />
+                <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" class="text-danger small">
+                  Name is required.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Enter Username:</label>
+                <input type="text" class="form-control" formControlName="username" />
+                <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="text-danger small">
+                  Username is required.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Enter Password:</label>
+                <input type="password" class="form-control" formControlName="password" />
+                <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger small">
+                  Password is required.
+                </div>
+              </div>
+  
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Sign Up</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

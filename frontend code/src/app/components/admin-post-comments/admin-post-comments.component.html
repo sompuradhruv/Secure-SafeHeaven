@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <!-- Highlighted Main Post Section -->
+    <div class="card shadow-sm border-0 mb-4">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0"><i class="bi bi-chat-left-text"></i> Post</h4>
+        <span class="badge bg-warning text-dark">{{ actualPost?.postType || 'General' }}</span>
+      </div>
+      <div class="card-body">
+        <p class="mb-2 text-muted"><i class="bi bi-person-circle"></i> <strong>{{ actualPost?.user?.name }}</strong></p>
+        <p class="mb-0 fs-5">{{ actualPost?.text }}</p>
+      </div>
+    </div>
+  
+    <!-- Conversation Section -->
+    <div class="card shadow-lg border-0">
+      <div class="card-header bg-primary text-white text-center py-3">
+        <h2 class="mb-0">Conversation</h2>
+      </div>
+  
+      <div class="card-body">
+
+                    <!-- Success Message -->
+                    <div *ngIf="successMessage" class="alert alert-success text-center">
+                      <strong>{{ successMessage }}</strong>
+                    </div>
+        
+        <!-- Comment Input -->
+        <div class="mb-3">
+          <textarea [(ngModel)]="newPost" class="form-control" placeholder="Add a comment..." rows="3"></textarea>
+        </div>
+        <div class="text-end">
+          <button class="btn btn-primary px-4" (click)="addPost()">
+            <i class="bi bi-chat-dots"></i> Post
+          </button>
+        </div>
+  
+        <!-- Posts List with Spacing -->
+        <div class="list-group mt-4">
+          <div *ngFor="let post of posts" class="list-group-item list-group-item-action mb-3 p-3 shadow-sm rounded">
+            <strong class="text-primary"><i class="bi bi-person-circle"></i> {{ post.user.name }}</strong>
+            <p class="mb-1">{{ post.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+    <div class="card-header bg-primary text-white text-center py-3">
+      <h2 class="mb-0">Moderated Discussion Board</h2>
+    </div>
+
+    <div class="card-body">
+            <!-- Success Message -->
+            <div *ngIf="successMessage" class="alert alert-success text-center">
+              <strong>{{ successMessage }}</strong>
+            </div>
+      
+<!-- Search Input -->
+<div class="mb-3">
+  <div class="input-group">
+    <span class="input-group-text bg-primary text-white">
+      <i class="bi bi-search"></i> <!-- Bootstrap search icon -->
+    </span>
+    <input 
+      type="text" 
+      [(ngModel)]="searchQuery" 
+      class="form-control" 
+      placeholder="Search posts by text or type..."
+    />
+    <button *ngIf="searchQuery" class="btn btn-outline-secondary" (click)="clearSearch()">
+      <i class="bi bi-x-lg"></i> <!-- Bootstrap close icon -->
+    </button>
+  </div>
+</div>
+
+      <!-- Post Input -->
+      <div class="mb-3">
+        <textarea [(ngModel)]="newPost" class="form-control" placeholder="Share your thoughts..." rows="3"></textarea>
+      </div>
+      <div class="mb-4 d-flex">
+        <select [(ngModel)]="selectedPostType" class="form-select me-2">
+          <option *ngFor="let type of postTypes" [value]="type">{{ type }}</option>
+        </select>
+        <button class="btn btn-primary px-4" (click)="addPost()">
+          <i class="bi bi-pencil-square"></i> Post
+        </button>
+      </div>
+
+      <!-- Posts List with Filtering -->
+      <div class="list-group">
+        <div *ngFor="let post of filteredPosts()" class="list-group-item list-group-item-action mb-3">
+          <a class="text-decoration-none text-dark" (click)="navigateToCommentsPage(post.id)">
+            <strong>You:</strong> {{ post.text }} <br>
+            <small class="text-muted"><strong>Post Type:</strong> {{ post.postType || 'Not Specified' }}</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
