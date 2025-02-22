@@ -2,8 +2,6 @@
 
 **A confidential space for safety, support, and action.**  
 
-![SafeHaven Banner](https://via.placeholder.com/800x300?text=SafeHaven+Confidential+Reporting+Platform)
-
 ---
 
 ## 🔒 **About the Project**
@@ -72,6 +70,33 @@ Built with privacy and ease of use in mind, our platform ensures that help is ju
      ```bash
      ng serve
      ```
+
+---
+
+## 📸 **Project Screenshots**
+
+# **Login Screen**
+![Screenshot (10)](https://github.com/user-attachments/assets/6743c457-5355-48a7-a3cc-5f3150419764)
+
+# **Sign Up Screen**
+![Screenshot (11)](https://github.com/user-attachments/assets/71659471-b451-4e14-b7f5-44cc116a1e8f)
+
+# **Post Screen**
+![image](https://github.com/user-attachments/assets/7e02c66a-a076-40b5-8238-4ec8d43fe9cb)
+
+# **Post Comments**
+![image](https://github.com/user-attachments/assets/d0c4ed0b-3970-4006-865d-1f7661a9e45f)
+
+# **Report Screen**
+![image](https://github.com/user-attachments/assets/ddcbd127-90f7-44a5-ba19-e1272bb1e936)
+
+# **Report Comments**
+![Screenshot (12)](https://github.com/user-attachments/assets/8437fa4e-ae92-4985-b69f-1ec2a474b7c1)
+
+![Screenshot (13)](https://github.com/user-attachments/assets/b19b085a-5e78-4dd9-8e48-f89bf43a641e)
+
+# **Guidelines**
+![image](https://github.com/user-attachments/assets/b3fc44de-58cb-46f9-b6ea-60a7fbcc2796)
 
 ---
 
