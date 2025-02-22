@@ -114,7 +114,7 @@ We welcome contributions to make **SafeHaven** even better!
 ## 📩 **Contact**
 
 Have questions, feedback, or need support?  
-📧 Email us at: [support@safehaven.org](mailto:sompuradhruv0@gmail.com)
+📧 Email us at: [sompuradhruv0@gmail.com](mailto:sompuradhruv0@gmail.com)
 
 ---
 
